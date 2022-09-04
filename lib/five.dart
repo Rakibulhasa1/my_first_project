@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/six.dart';
 
 class Five extends StatelessWidget {
   const Five({Key? key}) : super(key: key);
@@ -272,7 +273,10 @@ class Five extends StatelessWidget {
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       primary: Colors.black, shape: StadiumBorder()),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Six()));
+                  },
                   child: Text(
                     'Invest Here',
                     style: TextStyle(fontSize: 16),
