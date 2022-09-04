@@ -1,4 +1,7 @@
+// ignore_for_file: sort_child_properties_last, prefer_const_literals_to_create_immutables, prefer_const_constructors
+
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/two.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -22,7 +26,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
       home: const MyHomePage(),
     );
@@ -40,6 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueAccent,
       appBar: AppBar(
         leading: IconButton(
             onPressed: () {}, icon: const Icon(Icons.arrow_back_ios)),
@@ -51,19 +56,18 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             Container(
-              
               width: MediaQuery.of(context).size.width,
               child: Center(
                 child: Column(
                   children: [
-                    const Icon(
+                    Icon(
                       Icons.star,
                       color: Colors.orangeAccent,
                     ),
                     const Center(
                         child: const Text(
                       "Basic Lesson",
-                      style: const TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(fontWeight: FontWeight.bold),
                     )),
                   ],
                 ),
@@ -146,6 +150,23 @@ class _MyHomePageState extends State<MyHomePage> {
                   borderRadius: BorderRadius.circular(20)),
               height: 100,
             ),
+            const SizedBox(
+              height: 16,
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    elevation: 5,
+                    primary: Colors.green,
+                    shape: StadiumBorder()),
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Two()));
+                },
+                child: Text('Next Page'),
+              ),
+            )
           ],
         ),
       ),
