@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/seven.dart';
 
 class Six extends StatelessWidget {
   const Six({Key? key}) : super(key: key);
@@ -187,12 +188,160 @@ class Six extends StatelessWidget {
                               elevation: 5,
                               shape: StadiumBorder(),
                               primary: Colors.black),
-                          onPressed: () {},
+                          onPressed: () {
+                            showModalBottomSheet(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.vertical(
+                                      top: Radius.circular(20))),
+                              context: context,
+                              builder: (context) => Container(
+                                padding: EdgeInsets.all(16),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Messaging ID',
+                                      style: TextStyle(
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.w600,
+                                          color: Colors.black),
+                                    ),
+                                    SizedBox(
+                                      height: 30,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          'Your daily plan',
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                              color: Colors.black),
+                                        ),
+                                        Expanded(child: Container()),
+                                        Text('70%')
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 30,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Flexible(
+                                          flex: 1,
+                                          child: Container(
+                                            height: 80,
+                                            decoration: BoxDecoration(
+                                                color: Color.fromRGBO(
+                                                    255, 231, 171, 1),
+                                                borderRadius:
+                                                    BorderRadius.circular(16)),
+                                            child: Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 12.0, top: 8),
+                                              child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    '17',
+                                                    style: TextStyle(
+                                                      fontSize: 22,
+                                                    ),
+                                                  ),
+                                                  Row(
+                                                    children: [
+                                                      Icon(
+                                                          Icons.calendar_today),
+                                                      Text(
+                                                        'Tasks finished',
+                                                        style: TextStyle(
+                                                            color: Colors
+                                                                .grey[800]),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 20,
+                                        ),
+                                        Flexible(
+                                          flex: 1,
+                                          child: Container(
+                                            height: 80,
+                                            decoration: BoxDecoration(
+                                                color: Color.fromRGBO(
+                                                    255, 231, 171, 1),
+                                                borderRadius:
+                                                    BorderRadius.circular(16)),
+                                            child: Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 12.0, top: 8),
+                                              child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    '3,2',
+                                                    style:
+                                                        TextStyle(fontSize: 22),
+                                                  ),
+                                                  Row(
+                                                    children: [
+                                                      Icon(Icons.lock_clock),
+                                                      Text(
+                                                        'Tracked hours',
+                                                        style: TextStyle(
+                                                            color: Colors
+                                                                .grey[800]),
+                                                      )
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    Text(
+                                      'Overview',
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w700),
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
                           child: Text('Great Free Trial')),
                     ),
                     SizedBox(
                       height: 10,
                     ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Seven()));
+                          },
+                          child: Text('Next Page Design')),
+                    )
                   ],
                 ),
               ),
